@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Inter&family=Source+Sans+3&display=swap');
+
+:root {
+  --font-body:"Inter", sans-serif;
+  --font-headline: "Calistoga", cursive;
+  --font-footer: "Source Sans 3", sans-serif; 
+  /* colors */
+  --primary-color: #FFC107;
+  --secondary-color: #5C5C5C;
+  --tertiary-color: #C2C2C2;
+  /* sizes */
+  --font-base: 18px;
+  --small-font: 0.8em;
+  --large-font: 1.2em;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: var(--font-base);
+}
+
+h1, h2 {
+    font-family: var(--font-headline);
+}
+
+h3 {
+    font-family: var(--font-body);
+    font-weight: bold;
+}
+
+p {
+    font-family: var(--font-body);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Home Page */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    background-color: var(--primary-color);
+}
+
+#logo {
+    width: 50px;
+    height: auto;
+    background-color: aqua;
+    border: 1px solid black;
+}
+
+.flex__container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+#banner {
+    width: 100%;
+    height: 350px;
+    background-color: antiquewhite;
+    border: 1px solid black;
+}
+
+#search__container {
+    background-color: var(--tertiary-color);
+    width: 80vw;
+    margin-top: 5vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#search__bar {
+    width: 60vw;
+    height: 2em;
+}
+
+#search__button {
+    height: 2.5em;
+    background-color: var(--primary-color);
+    border: none;
+    box-shadow: 2px 2px 2px;
+}
+
+footer {
+    font-size: small;
+    padding: 10px 15px;
+    background-color: lightblue;
+    height: 18vh;
+    background-color: var(--secondary-color);
+    font-family: var(--font-footer);
+}
