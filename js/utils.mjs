@@ -4,6 +4,8 @@ function loadTemplate(path) {
     if (res.ok) {
       const html = await res.text();
       return html;
+    } else {
+      console.log("Error HEADER")
     }
   };
 }
