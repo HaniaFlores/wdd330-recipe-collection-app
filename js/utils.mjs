@@ -1,6 +1,6 @@
 function loadTemplate(path) {
   return async function () {
-    const res = await fetch(path);
+    const res = await fetch("wdd330-recipe-collection-app" + path);
     if (res.ok) {
       const html = await res.text();
       return html;
@@ -30,8 +30,8 @@ export async function renderWithTemplate(
 
 export async function loadHeaderFooter() {
 
-  const headerTemplateFn = loadTemplate("dynamic/footer.html");
-  const footerTemplateFn = loadTemplate("../dynamic/footer.html");
+  const headerTemplateFn = loadTemplate("/dynamic/footer.html");
+  const footerTemplateFn = loadTemplate("/dynamic/footer.html");
   const headerEl = document.querySelector("#main__header");
   const footerEl = document.querySelector("#main__footer");
 
