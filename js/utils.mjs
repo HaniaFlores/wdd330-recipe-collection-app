@@ -30,7 +30,7 @@ export async function renderWithTemplate(
 
 export async function loadHeaderFooter() {
 
-  const headerTemplateFn = loadTemplate("../dynamic/header.html");
+  const headerTemplateFn = loadTemplate("/dynamic/header.html");
   const footerTemplateFn = loadTemplate("../dynamic/footer.html");
   const headerEl = document.querySelector("#main__header");
   const footerEl = document.querySelector("#main__footer");
