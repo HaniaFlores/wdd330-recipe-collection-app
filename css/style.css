@@ -5,7 +5,7 @@
   --font-headline: "Calistoga", cursive;
   --font-footer: "Source Sans 3", sans-serif; 
   /* colors */
-  --primary-color: #FFC107;
+  --primary-color: #fbcd44;
   --secondary-color: #5C5C5C;
   --tertiary-color: #C2C2C2;
   /* sizes */
@@ -48,10 +48,13 @@ header {
 }
 
 #logo {
-    width: 50px;
+    width: 120px;
     height: auto;
     background-color: aqua;
-    border: 1px solid black;
+}
+
+#fav_icon {
+    font-size: 1.3em;
 }
 
 .flex__container {
@@ -62,11 +65,16 @@ header {
     margin-bottom: 2em;
 }
 
-#banner {
+/* #banner {
     width: 100%;
-    height: 350px;
+    height: 20vh;
     background-color: antiquewhite;
-    border: 1px solid black;
+} */
+
+#banner__img {
+    width: 100vw;
+    height: 50vh;
+    object-fit: cover;
 }
 
 #search__container {
@@ -95,7 +103,7 @@ footer {
     font-size: small;
     padding: 10px 15px;
     background-color: lightblue;
-    height: 18vh;
+    color: var(--tertiary-color);
     background-color: var(--secondary-color);
     font-family: var(--font-footer);
 }
