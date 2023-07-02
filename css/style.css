@@ -63,7 +63,20 @@ header {
     flex-direction: column;
     align-items: center;
     margin-bottom: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
 }
+
+footer {
+    font-size: small;
+    padding: 10px 15px;
+    background-color: lightblue;
+    color: var(--tertiary-color);
+    background-color: var(--secondary-color);
+    font-family: var(--font-footer);
+}
+
+/* ---------------------- HOME PAGE ------------------ */
 
 /* #banner {
     width: 100%;
@@ -106,11 +119,33 @@ header {
     border-radius: 4px;
 }
 
-footer {
-    font-size: small;
-    padding: 10px 15px;
-    background-color: lightblue;
-    color: var(--tertiary-color);
-    background-color: var(--secondary-color);
-    font-family: var(--font-footer);
+/* ----------------- RECIPE PAGE -------------------- */
+
+#ingredients__section {
+    align-self: start;
+}
+
+#ingredients__section  ul{
+    display: flex;
+    flex-direction: column;
+}
+
+#ingredients__list {
+    display: flex;
+    flex-direction: row;
+    gap: 10vw;
+    break-inside: avoid;
+    justify-content: space-between;
+}
+
+#addToFavorites {
+    background-color: var(--primary-color);
+    padding: 1em;
+    border-radius: 4px;
+    margin-top: 1em;
+    cursor: pointer;
+}
+
+#addToFavorites:hover {
+    background-color: #eec23e;
 }
