@@ -1,6 +1,6 @@
 function loadTemplate(path) {
   return async function () {
-    const res = await fetch("wdd330-recipe-collection-app" + path);
+    const res = await fetch(path);
     if (res.ok) {
       const html = await res.text();
       return html;
