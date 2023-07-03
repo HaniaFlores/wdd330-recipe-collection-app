@@ -119,7 +119,7 @@ footer {
     border-radius: 4px;
 }
 
-/* ------------------ RECIPE DETAILS PAGE ----------- */
+/* ------------------ RECIPE LIST PAGE ----------- */
 
 #sortBy__container {
     display: flex;
@@ -172,10 +172,6 @@ footer {
 .recipe__card h3 {
   margin: 0;
   font-weight: normal; 
-}
-
-#servingsNum {
-  font-weight: bold;
 }
 
 /* ----------------- RECIPE PAGE -------------------- */

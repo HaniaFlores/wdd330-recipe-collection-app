@@ -1,5 +1,5 @@
 import { getRecipeList } from "./getData.mjs";
-import { renderListWithTemplate } from "./utils.mjs";
+import { makeId, renderListWithTemplate } from "./utils.mjs";
 
 export default async function recipeList(
   selector,
@@ -7,8 +7,10 @@ export default async function recipeList(
 /*   orderAscDesc = "asc",
   idBtn = "sort-by-name" */
 ) {
-  let el = document.querySelector(selector);
-  const recipes = await getRecipeList(string);
+    let el = document.querySelector(selector);
+    const recipes = await getRecipeList(string);
+    console.log(recipes);
+    
 
 /*   const orderedList = orderList(products, orderAscDesc, idBtn); */
   renderListWithTemplate(recipeCardTemplate, el, recipes);
@@ -16,10 +18,10 @@ export default async function recipeList(
 
 export function recipeCardTemplate(recipe) {
 
-  return `<li class="recipe__card">
-  <a href="../index.html">
+  return `<li class="recipe__card" dataId="${recipe.title}">
+  <a href="../recipe-pages/index.html?recipe=${makeId(recipe.title)}">
     <h2>${recipe.title}</h2>
-    <h3>Servings #<span id="servingsNum">${recipe.servings}</span></h3>
+    <p>${recipe.servings}</p>
   </a>
 </li>
 `;

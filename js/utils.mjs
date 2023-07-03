@@ -80,3 +80,19 @@ export function setLocalStorage(key, data) {
 export function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
+
+export function makeId(string) {
+  return string.replace(/\s+/g, '-');
+}
+
+export function stringToId(string) {
+  return string.replace(/-/g, ' ');
+}
+
+export function getParam(param) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const product = urlParams.get(param);
+  console.log("ID", product);
+  return stringToId(product);
+}
