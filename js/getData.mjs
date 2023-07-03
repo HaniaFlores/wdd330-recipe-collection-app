@@ -7,15 +7,15 @@ async function convertToJson(res) {
   }
 }
 
-export async function getRecipeList(keyword) {    
-    const url = 'https://api.api-ninjas.com/v1/recipe?query=' + keyword;
-    const apiKey = 'd89baii574+c3Cmel9YXPg==lOPH7N4ylzgy1WoJ';
+export async function getRecipeList(string) {    
+    const url = "https://api.api-ninjas.com/v1/recipe?query=" + string;
+    const apiKey = "d89baii574+c3Cmel9YXPg==lOPH7N4ylzgy1WoJ";
 
     const options = {
-        method: 'GET',
+        method: "GET",
         headers: {
-            'X-Api-Key': apiKey,
-            'Content-Type': 'application/json'
+            "X-Api-Key": apiKey,
+            "Content-Type": "application/json"
         }
     };
 
@@ -25,7 +25,7 @@ export async function getRecipeList(keyword) {
         console.log(data);
         return data;
     } catch (error) {
-        console.error('Error:', error);
+        console.error("Error:", error);
         throw error;
     }
 }

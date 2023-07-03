@@ -28,6 +28,20 @@ export async function renderWithTemplate(
   }
 }
 
+export function renderListWithTemplate(
+  templateFn,
+  parentElement,
+  list,
+  position = "afterbegin",
+  clear = true
+) {
+  if (clear) {
+    parentElement.innerHTML = "";
+  }
+  const htmlString = list.map(templateFn);
+  parentElement.insertAdjacentHTML(position, htmlString.join(""));
+}
+
 export async function loadHeaderFooter() {
 
   const headerTemplateFn = loadTemplate("/dynamic/header.html");
@@ -58,3 +72,11 @@ export async function loadHeaderFooter() {
     window.location.href = "./recipe-list/index.html";
   });
 } */
+
+export function setLocalStorage(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
+export function getLocalStorage(key) {
+  return JSON.parse(localStorage.getItem(key));
+}
