@@ -5,7 +5,7 @@
   --font-headline: "Calistoga", cursive;
   --font-footer: "Source Sans 3", sans-serif; 
   /* colors */
-  --primary-color: #FFC107;
+  --primary-color: #fbcd44;
   --secondary-color: #5C5C5C;
   --tertiary-color: #C2C2C2;
   /* sizes */
@@ -48,28 +48,49 @@ header {
 }
 
 #logo {
-    width: 50px;
-    height: auto;
-    background-color: aqua;
-    border: 1px solid black;
+    width: 120px;
+    height: 10vh;
+    object-fit: cover;
+}
+
+#fav_icon {
+    font-size: 1.3em;
 }
 
 .flex__container {
     display: flex;
-    justify-content: center;
+    text-align: center;
     flex-direction: column;
     align-items: center;
     margin-bottom: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
 }
 
-#banner {
+footer {
+    font-size: small;
+    padding: 10px 15px;
+    background-color: lightblue;
+    color: var(--tertiary-color);
+    background-color: var(--secondary-color);
+    font-family: var(--font-footer);
+}
+
+/* ---------------------- HOME PAGE ------------------ */
+
+/* #banner {
     width: 100%;
-    height: 350px;
+    height: 20vh;
     background-color: antiquewhite;
-    border: 1px solid black;
+} */
+
+#banner__img {
+    width: 100vw;
+    height: 50vh;
+    object-fit: cover;
 }
 
-#search__container {
+#search__section {
     background-color: var(--tertiary-color);
     width: 80vw;
     margin-top: 5vh;
@@ -79,23 +100,107 @@ header {
     align-items: center;
 }
 
-#search__bar {
+#search__input {
     width: 60vw;
-    height: 2em;
+    padding: 8px;
+    font-size: var(--font-base);
+    border: 1px solid var(--tertiary-color);
+    border-radius: 4px;
 }
 
 #search__button {
-    height: 2.5em;
     background-color: var(--primary-color);
     border: none;
     box-shadow: 2px 2px 2px;
+    cursor: pointer;
+    margin-left: 8px;
+    padding: 8px 16px;
+    font-size: var(--font-base);
+    border-radius: 4px;
 }
 
-footer {
-    font-size: small;
-    padding: 10px 15px;
-    background-color: lightblue;
-    height: 18vh;
+/* ------------------ RECIPE LIST PAGE ----------- */
+
+#sortBy__container {
+    display: flex;
+    align-items: center;
+}
+
+#sortBy__container h3 {
+    margin-right: 10px;
+}
+
+#sortBy__container p {
     background-color: var(--secondary-color);
-    font-family: var(--font-footer);
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+#sortBy__container p:hover {
+    background-color: var(--tertiary-color);
+    color: black;
+}
+
+.recipeList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.recipe__card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: #f2f2f2;
+  padding: 15px;
+  width: 90vw;
+}
+
+.recipe__card a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  width: 100%; 
+}
+
+.recipe__card h2 {
+  margin: 0;
+}
+
+.recipe__card h3 {
+  margin: 0;
+  font-weight: normal; 
+}
+
+/* ----------------- RECIPE PAGE -------------------- */
+
+#ingredients__section {
+    align-self: start;
+}
+
+#ingredients__section  ul{
+    display: flex;
+    flex-direction: column;
+}
+
+#ingredients__list {
+    display: flex;
+    flex-direction: row;
+    gap: 10vw;
+    break-inside: avoid;
+    justify-content: space-between;
+}
+
+#addToFavorites {
+    background-color: var(--primary-color);
+    padding: 1em;
+    border-radius: 4px;
+    margin-top: 1em;
+    cursor: pointer;
+}
+
+#addToFavorites:hover {
+    background-color: #eec23e;
 }
