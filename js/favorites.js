@@ -1,3 +1,4 @@
-import { loadHeaderFooter } from "./utils.mjs";
+import { loadHeaderFooter, breadcrumbs } from "./utils.mjs";
 
 loadHeaderFooter();
+breadcrumbs("favorites");

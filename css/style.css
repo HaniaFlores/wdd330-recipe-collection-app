@@ -210,3 +210,49 @@ footer {
 #addToFavorites:hover {
     background-color: #eec23e;
 }
+
+/* -----------BREADCRUMBS --------------- */
+.breadcrumb {
+  max-width: 100%;
+  margin-top: 1em;
+  padding: 10px;
+  /* background-color: var(--tertiary-color); */
+}
+
+.breadcrumb__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.breadcrumb__item {
+  /* margin: 0 auto; */
+  font-size: var(--font-base);
+  font-family: var(--font-footer);
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.breadcrumb__item a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.breadcrumb__item:last-child a {
+  color: black;
+  padding: 0.5rem;
+  border: 1px solid var(--primary-color);
+  font-weight: bold;
+}
+
+.breadcrumb__item:not(:last-child):hover a {
+  text-decoration: underline;
+}
+
+.breadcrumb__item:not(:last-child) {
+  border-right: 1px solid var(--secondary-color);
+  padding: 0 1rem;
+}

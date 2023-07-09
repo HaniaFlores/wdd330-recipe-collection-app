@@ -1,3 +1,6 @@
+import { findRecipeById, getRecipeList } from "./getData.mjs";
+import recipeList from "./recipeList.mjs";
+
 function loadTemplate(path) {
   return async function () {
     const res = await fetch(path);
@@ -53,26 +56,6 @@ export async function loadHeaderFooter() {
   renderWithTemplate(footerTemplateFn, footerEl);
 }
 
-/* export function breadcrumbs() {
-  // Obtener los elementos del DOM
-  var searchButton = document.getElementById("search__button");
-  var searchBar = document.getElementById("search__bar");
-
-  // Agregar un evento click al botón de búsqueda
-  searchButton.addEventListener("click", function() {
-    // Obtener el valor del input
-    var searchQuery = searchBar.value;
-    console.log(searchQuery);
-
-    // Almacenar el valor en una variable o hacer lo que desees con él
-    // Ejemplo:
-    localStorage.setItem("searchQuery", searchQuery);
-
-    // Redirigir a otra página
-    window.location.href = "./recipe-list/index.html";
-  });
-} */
-
 export function setLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
@@ -85,7 +68,7 @@ export function makeId(string) {
   return string.replace(/\s+/g, '-');
 }
 
-export function stringToId(string) {
+export function idToString(string) {
   return string.replace(/-/g, ' ');
 }
 
@@ -94,5 +77,45 @@ export function getParam(param) {
   const urlParams = new URLSearchParams(queryString);
   const product = urlParams.get(param);
   console.log("ID", product);
-  return stringToId(product);
+  return idToString(product);
+}
+
+export function breadcrumbs(page) {
+  const breadcrumbList = document.getElementById("breadcrumb__list");
+
+  switch (page) {
+    case "home": {
+      breadcrumbList.innerHTML = `<li class="breadcrumb__item"><a href="/">HOME</a></li>`;
+      break;
+    }
+    case "recipe_page": {
+      const recipeId = getParam("recipe");
+      findRecipeById(idToString(recipeId)).then((data) => {
+        const breadcrumbItem = `<li class="breadcrumb__item"><a href="../recipe-list/index.html">Search Results (10)</a></li><li class="breadcrumb__item"><a href="../recipe-pages/index.html?recipe=${recipeId}">Recipe - ${idToString(
+          recipeId
+        )}</a></li>`;
+        breadcrumbList.innerHTML += breadcrumbItem;
+      });
+      break;
+    }
+    case "favorites": {
+      const favoritesCount = getFavoritesCount();
+      const breadcrumbItem = `<li class="breadcrumb__item"><a href="../favorites/index.html">Favorites (${
+        favoritesCount ?? 0
+      })</a></li>`;
+      breadcrumbList.innerHTML += breadcrumbItem;
+      break;
+    }
+    case "recipe_list": {
+      let searchValue = getLocalStorage("search");
+      getRecipeList(searchValue).then((data) => {
+        const length = data.length;
+        const breadcrumbItem = `<li class="breadcrumb__item"><a href="">Search Results (${length})</a></li>`;
+        breadcrumbList.innerHTML += breadcrumbItem;
+      });
+      break;
+    }
+    default:
+      break;
+  }
 }
