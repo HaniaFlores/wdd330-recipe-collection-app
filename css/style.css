@@ -69,11 +69,17 @@ header {
 
 footer {
     font-size: small;
-    padding: 10px 15px;
+    padding: 1em 1em;
     background-color: lightblue;
     color: var(--tertiary-color);
     background-color: var(--secondary-color);
     font-family: var(--font-footer);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    height: 8vh;
 }
 
 /* ---------------------- HOME PAGE ------------------ */
