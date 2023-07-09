@@ -256,3 +256,13 @@ footer {
   border-right: 1px solid var(--secondary-color);
   padding: 0 1rem;
 }
+
+/* --------- CHANGE THIS CSS-------------- */
+#ingredients__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
