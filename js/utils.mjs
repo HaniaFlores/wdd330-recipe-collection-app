@@ -98,14 +98,14 @@ export function breadcrumbs(page) {
       });
       break;
     }
-    case "favorites": {
+    /* case "favorites": {
       const favoritesCount = getFavoritesCount();
       const breadcrumbItem = `<li class="breadcrumb__item"><a href="../favorites/index.html">Favorites (${
         favoritesCount ?? 0
       })</a></li>`;
       breadcrumbList.innerHTML += breadcrumbItem;
       break;
-    }
+    } */
     case "recipe_list": {
       let searchValue = getLocalStorage("search");
       getRecipeList(searchValue).then((data) => {

@@ -13,4 +13,13 @@ function getInput() {
 
 document.getElementById("search__button").addEventListener("click", getInput);
 
+/* If user press enter will call getInput() */
+document
+  .getElementById("search__input")
+  .addEventListener("keyup", function (event) {
+    if (event.key === "Enter") {
+      getInput();
+    }
+  });
+
 
