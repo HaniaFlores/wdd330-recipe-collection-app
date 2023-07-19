@@ -1,7 +1,6 @@
 import { loadHeaderFooter, setLocalStorage } from "./utils.mjs";
 
 loadHeaderFooter();
-let data = {};
 
 function getInput() {
     const inputEl = document.getElementById("search__input");

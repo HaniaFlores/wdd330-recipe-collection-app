@@ -10,6 +10,7 @@ export default async function recipeDetails(productId) {
   document.title = recipe.title;
 
   renderRecipeDetails();
+  return recipe;
 /*   setColorItems(); */
 /*   document.getElementById("addToCart").addEventListener("click", addToCart); */
 }

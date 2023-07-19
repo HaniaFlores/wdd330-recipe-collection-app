@@ -76,7 +76,7 @@ export function getParam(param) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const product = urlParams.get(param);
-  console.log("ID", product);
+  /* console.log("ID", product); */
   return idToString(product);
 }
 
