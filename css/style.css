@@ -22,6 +22,7 @@ body {
 
 h1, h2 {
     font-family: var(--font-headline);
+    font-size: 1.2em;
 }
 
 h3 {
@@ -106,7 +107,7 @@ footer {
 }
 
 #search__input {
-    width: 60vw;
+    width: 40vw;
     padding: 8px;
     font-size: var(--font-base);
     border: 1px solid var(--tertiary-color);
@@ -262,4 +263,14 @@ footer {
   gap: 20px;
   padding: 0;
   margin: 0;
+}
+
+@media screen and (min-width: 500px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  #search__input {
+    width: 60vw;
+}
 }
