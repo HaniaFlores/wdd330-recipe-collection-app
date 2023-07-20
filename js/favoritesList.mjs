@@ -1,6 +1,6 @@
 import { getLocalStorage, renderListWithTemplate, makeId } from "./utils.mjs";
 
-export default function renderFavoritesList() {
+/* export default function renderFavoritesList() {
   const list = getLocalStorage("favorites");
 
   if (
@@ -10,7 +10,21 @@ export default function renderFavoritesList() {
     const el = document.querySelector(".recipeList");
     renderListWithTemplate(favoriteRecipeTemplate, el, list);
   }
+} */
+export default function renderFavoritesList() {
+  const list = getLocalStorage("favorites");
+  const el = document.querySelector(".recipeList");
+
+  if (
+    localStorage.getItem("favorites") !== null &&
+    Object.keys(list).length > 0
+  ) {
+    renderListWithTemplate(favoriteRecipeTemplate, el, list);
+  } else {
+    el.innerHTML = "<p>No recipes added</p>";
+  }
 }
+
 
 function favoriteRecipeTemplate(recipe) {
   return `<li class="recipe__card" dataId="${recipe.title}">
