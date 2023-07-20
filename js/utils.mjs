@@ -1,5 +1,4 @@
 import { findRecipeById, getRecipeList } from "./getData.mjs";
-import recipeList from "./recipeList.mjs";
 
 function loadTemplate(path) {
   return async function () {
@@ -76,7 +75,6 @@ export function getParam(param) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const product = urlParams.get(param);
-  /* console.log("ID", product); */
   return idToString(product);
 }
 
@@ -98,14 +96,6 @@ export function breadcrumbs(page) {
       });
       break;
     }
-    /* case "favorites": {
-      const favoritesCount = getFavoritesCount();
-      const breadcrumbItem = `<li class="breadcrumb__item"><a href="../favorites/index.html">Favorites (${
-        favoritesCount ?? 0
-      })</a></li>`;
-      breadcrumbList.innerHTML += breadcrumbItem;
-      break;
-    } */
     case "recipe_list": {
       let searchValue = getLocalStorage("search");
       getRecipeList(searchValue).then((data) => {

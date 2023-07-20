@@ -11,8 +11,6 @@ export default async function recipeDetails(productId) {
 
   renderRecipeDetails();
   return recipe;
-/*   setColorItems(); */
-/*   document.getElementById("addToCart").addEventListener("click", addToCart); */
 }
 
 function renderRecipeDetails() {
@@ -26,6 +24,6 @@ function renderRecipeDetails() {
         return ingredientEl;
     }).join("");
     document.getElementById("ingredients__list").innerHTML = ingredients;
-/*   document.getElementById("addToCart").setAttribute("data-id", product.Id); */
+
 }
 

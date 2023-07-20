@@ -37,7 +37,7 @@ export async function findRecipeById(id) {
   if (index !== -1) {
     return possibleRecipes[index];
   } else {
-    throw new Error("Receta no encontrada");
+    throw new Error("Recipe not found");
   }
   //find the recipe based on the param obtained and made a new API request.
 }
